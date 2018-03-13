@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.lukasz.janusz.entity.Meal;
 import pl.lukasz.janusz.entity.User;
@@ -19,10 +20,6 @@ import pl.lukasz.janusz.repository.UserRepository;
 
 @Controller
 public class HomeController {
-	
-//	@Autowired
-//	private UserDao bookDao;
-	
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -48,12 +45,10 @@ public class HomeController {
 	public String processAddUserForm(final @Valid User user, final BindingResult bresult) {
 		
 		if(bresult.hasErrors()) {
-			return "user/add";
+			return "user/register";
 		}
 		
 		userRepository.save(user);
-		
-//		userDao.add(user);
 		
 		return "redirect:index";
 	}
@@ -76,13 +71,12 @@ public class HomeController {
 		
 		mealRepository.save(meal);
 		
-		return "redirect:index";
+		return "redirect:meal/list";
 	}
 	
 	@GetMapping(path = "/meal/list")
-	public String showAllBooks(final Model model) {
+	public String showAllMeals(final Model model) {
 
-		//final Collection<Book> books = bookDao.findAll();
 		
 		final Collection<Meal> meals = mealRepository.findAll();
 		
@@ -90,4 +84,46 @@ public class HomeController {
 		return "meal/list";
 	}
 	
+	@GetMapping(path = "/meal/edit")
+	public String showEditForm(final @RequestParam(name = "id", required = true) long id, final Model model) {
+
+
+		final Meal meal = mealRepository.findOne(id);
+		
+		model.addAttribute("meal", meal);
+		return "meal/edit";
+	}
+
+	@PostMapping(path = "/meal/edit")
+	public String editMeal(final @Valid Meal meal, final BindingResult bresult) {
+		
+		if(bresult.hasErrors()) {
+			return "meal/edit";
+		}
+		
+		
+		mealRepository.save(meal);
+		
+		return "redirect:meal/list";
+	}
+	
+	@GetMapping(path = "/meal/remove")
+	public String showDeleteConfirmForm(final @RequestParam(name = "id", required = true) long id, final Model model) {
+		
+		
+		final Meal meal = mealRepository.findOne(id);
+		
+		model.addAttribute("meal", meal);
+
+		return "meal/remove";
+	}
+	
+	@PostMapping(path = "/meal/remove")
+	public String deleteMeal(final @RequestParam(name = "id", required = true) long id) {
+
+		
+		mealRepository.delete(id);
+		
+		return "redirect:list";
+	}
 }

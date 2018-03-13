@@ -6,7 +6,7 @@
 <title>Dziennik żywieniowy - lista wszytskich posiłków</title>
 </head>
 <body>
-  <h2>Witaj, ${diary_user.id }, oto Twoja lista posiłków</h2>
+  <h2>Witaj, ${user.name }, oto Twoja lista posiłków</h2>
   <table>
     <tr>
         <th>Id</th>
