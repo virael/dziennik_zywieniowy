@@ -1,5 +1,5 @@
-insert into diary_user(email, firstName, lastName, password) values("jan.brzechwa@gmail.com", "Jan", "Brzechwa", 1234);
-insert into diary_user(email, firstName, lastName, password) values("lukasz.janusz@ashg.com", "Łukasz", "Janusz", 1234);
+insert into diary_user(email, firstName, lastName, password) values("jan.brzechwa@gmail.com", "Jan", "Brzechwa", "$2a$10$741B8HfRkyS7DVo//3cUYeJ0GURQsz0aC17cvNxRxuLdEbP78erSK");
+insert into diary_user(email, firstName, lastName, password) values("lukasz.janusz@ashg.com", "Lukasz", "Janusz", "$2a$10$A1k0PYd.hUGlc9KRM2i6t.fFwdXOS3QuMXfST81Gw3H.WQEyxivEG");
 
 
 INSERT INTO `diary_meal`(`carbs`, `date`, `fat`, `kcal`, `name`, `protein`, `user_id`) VALUES ('100', '2017-03-12', '100', '100', 'Stek z żyrafy', '100', '1');

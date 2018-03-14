@@ -6,7 +6,7 @@
 	<persistence-unit name="dziennikZywieniowyPersistenceUnit">
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/dziennik_zywieniowy?useSSL=false" />
+				value="jdbc:mysql://localhost:3306/dziennik_zywieniowy?useSSL=false&amp;characterEncoding=utf-8&amp;useUnicode=true" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="coderslab" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

@@ -8,27 +8,16 @@
 <title>Rejestracja nowego użytkownika</title>
 </head>
 
-<body>
-  <f:form action="add" method="post" modelAttribute="user">
-    <div>
-      Imię: <f:input path="firstName"/>
-    </div>
-    <div>
-      Nazwisko: <f:input path="lastName"/>
-    </div>
-    <div>
-      Email: <f:input type="email" path="email"/>
-    </div>
-    <div>
-      Hasło: <f:input type="password" path="password"/>
-    </div>
-    <div>
-      Powtórz hasło: <f:input type="password" path="password"/>
-    </div>
-    
-    <div>
-      <input type="submit" value="Dodaj użytkownika"/>
-    </div>
-  </f:form>
+<body> 
+
+    <f:form method="post" modelAttribute="user">
+		<p>Imię: <f:input path="firstName" /> </p>
+		<p>Nazwisko: <f:input path="lastName" /> </p>
+		<p>Email: <f:input type="email" path="email" /> </p>
+		<p>Hasło: <f:input type="password" path="password" /> </p>
+	   
+		<p><input type="submit" value="Dodaj użytkownika"/></p>
+	</f:form>
+
 </body>
 </html>

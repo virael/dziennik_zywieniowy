@@ -10,5 +10,6 @@
 	<a href="http://localhost:8080/dziennik_zywieniowy/user/register">Rejestracja</a>
 	<a href="http://localhost:8080/dziennik_zywieniowy/meal/add">Dodaj posiłek</a>
 	<a href="http://localhost:8080/dziennik_zywieniowy/meal/list">Lista</a>
+	<a href="http://localhost:8080/dziennik_zywieniowy/user/login">Login</a>
 </body>
 </html>

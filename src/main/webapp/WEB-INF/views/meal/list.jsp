@@ -6,7 +6,8 @@
 <title>Dziennik żywieniowy - lista wszytskich posiłków</title>
 </head>
 <body>
-  <h2>Witaj, ${user.name }, oto Twoja lista posiłków</h2>
+  <h2>Witaj ${user.firstName }, oto Twoja lista posiłków</h2>
+  <a href="http://localhost:8080/dziennik_zywieniowy/user/logout">Wyloguj</a>
   <table>
     <tr>
         <th>Id</th>
@@ -32,6 +33,6 @@
         </tr>
     </c:forEach>
   </table>
-  <a href="<c:url value='add'/>">Dodaj nowy posiłek</a>
+  <a href="<c:url value='add?id=${user.id}'/>">Dodaj nowy posiłek</a>
 </body>
 </html>

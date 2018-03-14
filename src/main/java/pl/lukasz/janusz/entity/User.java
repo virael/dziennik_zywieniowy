@@ -3,13 +3,15 @@ package pl.lukasz.janusz.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.mindrot.jbcrypt.BCrypt;
 
 @Entity
 @Table(name = "diary_user")
@@ -31,8 +33,13 @@ public class User {
 //	@NotNull
 	private String password;
 	
-	@OneToMany(mappedBy="user", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="user", cascade = CascadeType.ALL)
+//	@OneToMany(mappedBy="user", fetch = FetchType.EAGER)
 	private List<Meal> meals = new ArrayList<>();
+	
+//	@OneToMany(cascade = CascadeType.ALL)
+//			@JoinColumn(name="id_meal")
+//			private List<Meal> meals = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -69,10 +76,14 @@ public class User {
 	public String getPassword() {
 		return password;
 	}
-
+	
 	public void setPassword(String password) {
-		this.password = password;
+		this.password = BCrypt.hashpw(password, BCrypt.gensalt());
 	}
+
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
 
 	public List<Meal> getMeals() {
 		return meals;
@@ -81,6 +92,11 @@ public class User {
 	public void setMeals(List<Meal> meals) {
 		this.meals = meals;
 	}
+	
+	public boolean isPasswordCorrect(String pwd) {
+		return BCrypt.checkpw(pwd, this.password);
+	}
+	
 
 	@Override
 	public String toString() {

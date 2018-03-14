@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -36,7 +37,19 @@ public class Meal {
 //	@NotNull
 	private Date date;
 	
+//	private Long user_id;
+//	
+//	public Long getUser_id() {
+//		return user_id;
+//	}
+//
+//	public void setUser_id(Long user_id) {
+//		this.user_id = user_id;
+//	}
+
 	@ManyToOne
+	@JoinColumn(name = "user_id", nullable = true) //tu powinno być false
+//	@JoinColumn(name = "id")
 	private User user;
 
 	public Long getId() {
@@ -95,18 +108,18 @@ public class Meal {
 		this.date = date;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 
 	@Override
 	public String toString() {
 		return "Meal [id=" + id + ", name=" + name + ", carbs=" + carbs + ", fat=" + fat + ", protein=" + protein
-				+ ", kcal=" + kcal + ", date=" + date + ", user=" + user + "]";
+				+ ", kcal=" + kcal + ", date=" + date +  "]"; // ", user=" + user +
 	}
 	
 	
