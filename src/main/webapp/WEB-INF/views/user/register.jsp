@@ -6,18 +6,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Rejestracja nowego użytkownika</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<style>
+	.container{
+		margin-top: 100px;
+	}
+</style>
 </head>
 
 <body> 
-
-    <f:form method="post" modelAttribute="user">
-		<p>Imię: <f:input path="firstName" /> </p>
-		<p>Nazwisko: <f:input path="lastName" /> </p>
-		<p>Email: <f:input type="email" path="email" /> </p>
-		<p>Hasło: <f:input type="password" path="password" /> </p>
-	   
-		<p><input type="submit" value="Dodaj użytkownika"/></p>
-	</f:form>
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-3">
+        <h4>Podaj swoje dane:</h4>
+            <div class="form-login">
+			    <f:form method="post" modelAttribute="user">
+					<p><f:input path="firstName" class="form-control input-sm chat-input" placeholder="Imię" /> </p>
+					<p><f:input path="lastName" class="form-control input-sm chat-input" placeholder="Nazwisko" /> </p>
+					<p><f:input type="email" path="email" class="form-control input-sm chat-input" placeholder="Email" /> </p>
+					<p><f:input type="password" path="password" class="form-control input-sm chat-input" placeholder="Hasło" /> </p>
+				   
+				   <div class="wrapper">
+						<p><input type="submit" class="btn btn-primary btn-md" value="Dodaj użytkownika"/></p>
+					</div>
+				</f:form>
+			</div>
+	      </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

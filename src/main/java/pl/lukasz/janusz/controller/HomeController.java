@@ -108,7 +108,7 @@ public class HomeController {
 		HttpSession httpSession = SessionManager.session();
 		httpSession.invalidate();
 		
-		return "redirect:/login";
+		return "redirect:../user/login";
 	}
 	
 	@GetMapping(path = "/meal/add")
@@ -133,12 +133,12 @@ public class HomeController {
 	}
 	
 	@GetMapping(path = "/meal/list")
-	public String showAllMeals(final @RequestParam long id, Model model) {
+	public String showAllMeals(final Model model) {
 
 		
-//		final Collection<Meal> meals = mealRepository.findAll();
+		final Collection<Meal> meals = mealRepository.findAll();
 //		final Collection<Meal> meals = mealRepository.findById(id);
-		final Collection<Meal> meals = mealRepository.searchMealByUserId(id);
+//		final Collection<Meal> meals = mealRepository.searchMealByUserId(id);
 //		final Collection<Meal> meals = mealRepository.searchMealByUserId(id); @RequestParam long id,
 		
 		model.addAttribute("meals", meals);
