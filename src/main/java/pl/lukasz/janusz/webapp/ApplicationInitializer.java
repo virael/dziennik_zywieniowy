@@ -24,4 +24,10 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 		dispatcher.addMapping("/");
 	}
 	
+//	protected Filter[] getServletFilters() {
+//        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+//        characterEncodingFilter.setEncoding("UTF-8");
+//        return new Filter[] { characterEncodingFilter };
+//    }
+	
 }

@@ -1,7 +1,5 @@
 package pl.lukasz.janusz.controller;
 
-import java.util.Collection;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -34,31 +32,8 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String showIndex() {
-		return "index";
+		return "redirect:/user/login";
 	}
-
-	// @GetMapping(path = "/user/register")
-	// public String showAddUserForm(final Model model) {
-	//
-	//
-	// final User user = new User();
-	// model.addAttribute("user", user);
-	//
-	// return "user/register";
-	// }
-	//
-	// @PostMapping(path = "/user/register")
-	// public String processAddUserForm(final @Valid User user, final BindingResult
-	// bresult) {
-	//
-	// if(bresult.hasErrors()) {
-	// return "user/register";
-	// }
-	//
-	// userRepository.save(user);
-	//
-	// return "redirect:../meal/list";
-	// }
 
 	@GetMapping("/user/register")
 	public String showAddUserForm(final Model model) {
@@ -73,8 +48,10 @@ public class HomeController {
 	public String processAddUserForm(final @Valid @ModelAttribute User user, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors()) {
-			return "redirect:user/register";
+			return "redirect:register";
 		} else {
+			HttpSession httpSession = SessionManager.session();
+			httpSession.setAttribute("user", user);
 			this.userRepository.save(user);
 			return "redirect:../meal/list";
 		}
@@ -130,25 +107,30 @@ public class HomeController {
 		HttpSession httpSession = SessionManager.session();
 		User user = (User) httpSession.getAttribute("user");
 		user.getMeals().add(meal);
-		this.userRepository.save(user);
+		this.userRepository.saveAndFlush(user);
 
+//		mealRepository.flush();
 //		mealRepository.save(meal);
 
 		return "redirect:list";
 	}
-
+	
+//	@PersitenceContext
+//	private final EntityManager entityManager;
 	@GetMapping(path = "/meal/list")
 	public String showAllMeals(final Model model) {
 		HttpSession httpSession = SessionManager.session();
 		User user = (User) httpSession.getAttribute("user");
-
-		// final Collection<Meal> meals = mealRepository.findAll();
+		
+//		 final Collection<Meal> meals = mealRepository.findAll();
 		// final Collection<Meal> meals = mealRepository.findById(id);
 		// final Collection<Meal> meals = mealRepository.searchMealByUserId(id);
 		// final Collection<Meal> meals = mealRepository.searchMealByUserId(id);
 		// @RequestParam long id,
-
+//		mealRepository.flush();
+//		this.entityManager.refresh(user);
 		model.addAttribute("meals", user.getMeals());
+//		mealRepository.flush();
 		return "meal/list";
 	}
 
@@ -185,9 +167,15 @@ public class HomeController {
 
 	@PostMapping(path = "/meal/remove")
 	public String deleteMeal(final @RequestParam(name = "id", required = true) long id) {
-
-		mealRepository.delete(id);
-
+		HttpSession httpSession = SessionManager.session();
+		User user = (User) httpSession.getAttribute("user");
+		Meal meal = this.mealRepository.findOne(id);
+//		Predicate<Meal> mealById = c -> c.getId() == id;
+		user.getMeals().removeIf((Meal m) -> m.getId() == meal.getId());
+		this.userRepository.save(user);
+//		mealRepository.delete(id);
+		
+		
 		return "redirect:list";
 	}
 }

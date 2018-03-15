@@ -8,6 +8,10 @@
 <title>Logowanie</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <style>
+	body{
+		background-color: #F5F5F5;
+	}
+	
 	.container{
 		margin-top: 100px;
 	}
@@ -22,8 +26,8 @@
             <div class="form-login">
             
 			<f:form method="post" modelAttribute="loginData">
-				<p><f:input path="email" class="form-control input-sm chat-input" placeholder="Email" /></p>
-				<p><f:password path="password" class="form-control input-sm chat-input" placeholder="Hasło"/></p>
+				<p><f:input path="email" class="form-control input-sm chat-input" placeholder="Email" required="true" /></p>
+				<p><f:password path="password" class="form-control input-sm chat-input" placeholder="Hasło" required="true" /></p>
 				<div class="wrapper">
 				<p><input type="submit" class="btn btn-primary btn-md" value="Zaloguj"/></p>
 				</div>

@@ -8,6 +8,10 @@
 <title>Dodawanie nowego posiłku</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <style>
+	body{
+		background-color: #F5F5F5;
+	}
+	
 	.container{
 		margin-top: 50px;
 	}
@@ -20,11 +24,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-4 col-md-3">
+        <a href="http://localhost:8080/dziennik_zywieniowy/meal/list">
+	     <button type="button" class="btn btn-default navbar-btn pull-right">
+	        <span class="glyphicon glyphicon-chevron-left"></span>
+     	 </button>
+     	 </a>
         <h4>Dodaj posiłek:</h4>
             <div class="form-login">
 			  <f:form action="add" method="post" modelAttribute="meal">
 			    <div>
-			      Nazwa: <f:input path="name" class="form-control input-sm chat-input" />
+			      Nazwa: <f:input path="name" class="form-control input-sm chat-input" required="true" />
 			    </div>
 			    <div>
 			      Węglowodany: <f:input path="carbs" class="form-control input-sm chat-input" />
@@ -44,6 +53,7 @@
 			    <div class="wrapper">
 					<input type="submit" class="btn btn-primary btn-md" value="Dodaj posiłek"/>
 				</div>
+				
 			  </f:form>
 			  </div>
 	      </div>

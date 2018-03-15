@@ -1,9 +1,9 @@
 package pl.lukasz.janusz.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.mindrot.jbcrypt.BCrypt;
 
 @Entity
@@ -22,20 +23,25 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-//	@NotNull
+	@NotEmpty
 	private String firstName;
 
-//	@NotNull
+	@NotEmpty
 	private String lastName;
 
-//	@NotNull
+	@NotEmpty
+	@Column(unique=true)
 	private String email;
 	
-//	@NotNull
+	@NotEmpty
 	private String password;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Meal> meals = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER
+			, orphanRemoval = true
+			)
+//	@OneToMany(mappedBy="User", cascade={CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER) 
+
+	private List<Meal> meals;
 	
 //	@OneToMany(cascade = CascadeType.ALL)
 //			@JoinColumn(name="id_meal")

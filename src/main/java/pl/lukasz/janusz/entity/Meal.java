@@ -1,13 +1,16 @@
 package pl.lukasz.janusz.entity;
 
+import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -37,20 +40,23 @@ public class Meal {
 //	@NotNull
 	private Date date;
 	
-//	private Long user_id;
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	private User user;
 //	
-//	public Long getUser_id() {
-//		return user_id;
+//	public User getUser() {
+//		return user;
 //	}
 //
-//	public void setUser_id(Long user_id) {
-//		this.user_id = user_id;
+//	public void setUser(User user) {
+//		this.user = user;
 //	}
 
-//	@ManyToOne
 //	@JoinColumn(name = "user_id", nullable = true) //tu powinno być false
 //	@JoinColumn(name = "id")
+//	@ManyToOne
 //	private User user;
+
+
 
 	public Long getId() {
 		return id;
@@ -114,6 +120,14 @@ public class Meal {
 //
 //	public void setUser(User user) {
 //		this.user = user;
+//	}
+
+//	public Calendar getDate() {
+//		return date;
+//	}
+//
+//	public void setDate(Calendar date) {
+//		this.date = date;
 //	}
 
 	@Override

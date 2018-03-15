@@ -5,14 +5,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Dziennik żywieniowy - lista wszytskich posiłków</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<style>
+	body{
+		background-color: #F5F5F5;
+	}
+</style>
 </head>
 <body>
 <div class="container">
 
     <div class="row">
         <div class="col-md-offset-0 col-l-5">
+        <p>
+		   <a href="http://localhost:8080/dziennik_zywieniowy/user/logout">
+	        <button type="button" class=" btn pull-right btn btn-default btn-sm">
+	         <span class="glyphicon glyphicon-log-out"></span> Wyloguj
+	        </button>
+	        </a>
+	      </p>
 		  <h2>Witaj ${user.firstName }, oto Twoja lista posiłków</h2>
-		  <a href="http://localhost:8080/dziennik_zywieniowy/user/logout">Wyloguj</a>
+		  
 		  <table class="table table-striped">
 		    <tr>
 		        <th>Id</th>
