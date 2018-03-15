@@ -23,6 +23,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import pl.lukasz.janusz.converter.LocalDateConverter;
+import pl.lukasz.janusz.converter.LocalDateTimeConverter;
 
 
 @EnableJpaRepositories(basePackages = "pl.lukasz.janusz.repository")
@@ -70,6 +71,7 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Override
 	   public void addFormatters(FormatterRegistry registry) {
-	       registry.addConverter(new LocalDateConverter("yyyy-MM-dd"));
+	       registry.addConverter(new LocalDateConverter("yyyy-MM-dd")); //-HH.mm.ss.SSSSSS
+	       registry.addConverter(new LocalDateTimeConverter("yyyy-MM-dd'T'HH:mm:ss.SSS"));
 	   }
 }

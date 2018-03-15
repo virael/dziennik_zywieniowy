@@ -47,10 +47,10 @@ public class Meal {
 //		this.user_id = user_id;
 //	}
 
-	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = true) //tu powinno być false
+//	@ManyToOne
+//	@JoinColumn(name = "user_id", nullable = true) //tu powinno być false
 //	@JoinColumn(name = "id")
-	private User user;
+//	private User user;
 
 	public Long getId() {
 		return id;

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,8 +34,7 @@ public class User {
 //	@NotNull
 	private String password;
 	
-	@OneToMany(mappedBy="user", cascade = CascadeType.ALL)
-//	@OneToMany(mappedBy="user", fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Meal> meals = new ArrayList<>();
 	
 //	@OneToMany(cascade = CascadeType.ALL)
