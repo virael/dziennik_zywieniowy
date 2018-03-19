@@ -21,6 +21,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-4 col-md-3">
+        <a href="http://localhost:8080/dziennik_zywieniowy/user/login">
+	     <button type="button" class="btn btn-default navbar-btn pull-right">
+	        <span class="glyphicon glyphicon-chevron-left"></span>
+     	 </button>
+     	 </a>
         <h4>Podaj swoje dane:</h4>
             <div class="form-login">
 			    <f:form method="post" modelAttribute="user">

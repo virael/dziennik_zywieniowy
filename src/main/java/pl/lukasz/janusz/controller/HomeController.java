@@ -1,6 +1,10 @@
 package pl.lukasz.janusz.controller;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +33,18 @@ public class HomeController {
 
 	@Autowired
 	private MealRepository mealRepository;
+	
+	@PersistenceContext(type=PersistenceContextType.EXTENDED)
+	private EntityManager em;
 
 	@RequestMapping("/")
 	public String showIndex() {
 		return "redirect:/user/login";
+	}
+	
+	@RequestMapping("/pong")
+	public String pong() {
+		return "pong";
 	}
 
 	@GetMapping("/user/register")
@@ -97,6 +109,7 @@ public class HomeController {
 		return "meal/add";
 	}
 
+	@Transactional
 	@PostMapping(path = "/meal/add")
 	public String processAddMealForm(final @Valid Meal meal, final BindingResult bresult) {
 
@@ -107,7 +120,21 @@ public class HomeController {
 		HttpSession httpSession = SessionManager.session();
 		User user = (User) httpSession.getAttribute("user");
 		user.getMeals().add(meal);
+		
 		this.userRepository.saveAndFlush(user);
+
+//		this.em.merge(user);
+//		this.em.refresh(user);
+		
+//		this.em.getTransaction();
+//		this.em.joinTransaction();
+		
+//		this.em.close();
+//		this.em.merge(user);
+//		this.em.persist(user);
+//		this.em.flush();
+//		this.em.refresh(user);
+//		this.em.merge(user);
 
 //		mealRepository.flush();
 //		mealRepository.save(meal);

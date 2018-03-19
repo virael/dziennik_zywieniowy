@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -46,6 +47,7 @@
 		            <td>${meal.fat}</td>
 		            <td>${meal.kcal}</td>
 		            <td>${meal.date}</td>
+		           <%-- <fmt:formatDate pattern="yyyy-MM-dd hh:mm" value="${meal.date}" /> --%>
 		            <td><a href="<c:url value='edit?id=${meal.id}'/>">Edytuj posiłek</a></td>
 		            <td><a href="<c:url value='remove?id=${meal.id}'/>">Usuń posiłek</a></td>
 		            
