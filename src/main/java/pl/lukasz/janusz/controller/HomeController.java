@@ -182,9 +182,10 @@ public class HomeController {
 		if (bresult.hasErrors()) {
 			return "meal/edit";
 		}
-
+		
 		mealRepository.save(meal);
-
+		this.em.merge(meal);
+		
 		return "redirect:list";
 	}
 
@@ -198,6 +199,7 @@ public class HomeController {
 		return "meal/remove";
 	}
 
+	@Transactional
 	@PostMapping(path = "/meal/remove")
 	public String deleteMeal(final @RequestParam(name = "id", required = true) long id) {
 		HttpSession httpSession = SessionManager.session();
@@ -205,7 +207,14 @@ public class HomeController {
 		Meal meal = this.mealRepository.findOne(id);
 //		Predicate<Meal> mealById = c -> c.getId() == id;
 		user.getMeals().removeIf((Meal m) -> m.getId() == meal.getId());
-		this.userRepository.save(user);
+		
+//		this.userRepository.save(user);
+
+		
+//		this.userRepository.saveAndFlush(user);
+		user = this.em.merge(user);
+//		httpSession.setAttribute("user", user);
+		
 //		mealRepository.delete(id);
 		
 		
