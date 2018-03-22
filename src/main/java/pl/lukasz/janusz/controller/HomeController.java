@@ -121,7 +121,13 @@ public class HomeController {
 		User user = (User) httpSession.getAttribute("user");
 		user.getMeals().add(meal);
 		
-		this.userRepository.saveAndFlush(user);
+//		this.userRepository.saveAndFlush(user);
+		user = this.em.merge(user);
+		
+		httpSession.setAttribute("user", user);
+		
+//		this.repoUMUser.saveAndFlush(u);
+//		u = this.em.merge(u);
 
 //		this.em.merge(user);
 //		this.em.refresh(user);
