@@ -64,6 +64,7 @@ public class HomeController {
 		} else {
 			HttpSession httpSession = SessionManager.session();
 			httpSession.setAttribute("user", user);
+			
 			this.userRepository.save(user);
 			return "redirect:../meal/list";
 		}
@@ -213,7 +214,7 @@ public class HomeController {
 		
 //		this.userRepository.saveAndFlush(user);
 		user = this.em.merge(user);
-//		httpSession.setAttribute("user", user);
+		httpSession.setAttribute("user", user);
 		
 //		mealRepository.delete(id);
 		
