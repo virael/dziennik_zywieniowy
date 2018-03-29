@@ -50,8 +50,8 @@
 		            <td>${meal.protein}</td>
 		            <td>${meal.fat}</td>
 		            <td>${meal.kcal}</td>
-		            <td>${meal.date}</td>
-		           <%-- <fmt:formatDate pattern="yyyy-MM-dd hh:mm" value="${meal.date}" /> --%>
+		            <td><fmt:formatDate pattern="dd-MM-yyyy - hh:mm" value="${meal.date}" /></td>
+		            <!--<td>${meal.date}</td>-->
 		            <td><a href="<c:url value='edit?id=${meal.id}'/>">Edytuj posiłek</a></td>
 		            <td><a href="<c:url value='remove?id=${meal.id}'/>">Usuń posiłek</a></td>
 		            

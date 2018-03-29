@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "diary_meal")
@@ -33,6 +35,7 @@ public class Meal {
 	private int kcal;
 	
 //	@NotNull
+//	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	
 //	@ManyToOne(cascade = CascadeType.ALL)
