@@ -1,0 +1,13 @@
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/repository/MealRepository.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/entity/User.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/converter/LocalDateConverter.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/repository/UserRepository.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/converter/LocalDateTimeConverter.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/bean/SessionController.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/bean/LoginData.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/conf/AppConfiguration.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/bean/SessionManager.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/webapp/ApplicationInitializer.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/entity/Meal.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/app/SpringDiApplication.java
+/home/lukas/workspace/dziennik_zywieniowy/src/main/java/pl/lukasz/janusz/controller/HomeController.java
