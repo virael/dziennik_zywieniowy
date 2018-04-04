@@ -11,3 +11,5 @@ This project is licensed under the GNU GENERAL PUBLIC LICENSE.
 
 ## Author
 Łukasz Janusz
+
+## <a href="http://food-diary-env.eu-west-1.elasticbeanstalk.com" target="_blank">App preview</a>
