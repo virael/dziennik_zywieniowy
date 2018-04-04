@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-md-offset-4 col-md-3">
-        <h4>Witaj ponownie</h4>
+        <h4>Witaj</h4>
             <div class="form-login">
             
 			<f:form method="post" modelAttribute="loginData">
@@ -32,7 +32,7 @@
 				<p><input type="submit" class="btn btn-primary btn-md" value="Zaloguj"/></p>
 				</div>
 			</f:form>
-			<P>Nie masz konta? <a href="http://localhost:8080/dziennik_zywieniowy/user/register">Rejestracja</a></P>
+			<P>Nie masz konta? <a href="/user/register">Rejestracja</a></P>
 			</div>
 	      </div>
     </div>

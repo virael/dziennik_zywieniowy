@@ -66,7 +66,8 @@ public class HomeController {
 			httpSession.setAttribute("user", user);
 			
 			this.userRepository.save(user);
-			return "redirect:../meal/list";
+			
+			return "redirect:../user/login";
 		}
 		
 	}

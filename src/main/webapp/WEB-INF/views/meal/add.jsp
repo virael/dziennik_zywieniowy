@@ -28,7 +28,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-4 col-md-3">
-        <a href="http://localhost:8080/dziennik_zywieniowy/meal/list">
+        <a href="/meal/list">
 	     <button type="button" class="btn btn-default navbar-btn pull-right">
 	        <span class="glyphicon glyphicon-chevron-left"></span>
      	 </button>
@@ -37,7 +37,7 @@
             <div class="form-login">
 			  <f:form action="add" method="post" modelAttribute="meal">
 			    <div>
-			      Nazwa: <f:input path="name" class="form-control input-sm chat-input" required="true" />
+			      Nazwa: <f:input path="name" value="łosoś" class="form-control input-sm chat-input" required="true" />
 			    </div>
 			    <div>
 			      Węglowodany: <f:input path="carbs" class="form-control input-sm chat-input" />
@@ -52,7 +52,7 @@
 			      Kalorie: <f:input path="kcal" class="form-control input-sm chat-input" />
 			    </div>
 			    <div>
-			      Data: <f:input type="datetime-local" path="date" class="form-control input-sm chat-input" />
+			      Data: <f:input type="datetime-local" value="2017-06-01T08:30" path="date" class="form-control input-sm chat-input" />
 			    </div>
 			    <div class="wrapper">
 					<input type="submit" class="btn btn-primary btn-md" value="Dodaj posiłek"/>

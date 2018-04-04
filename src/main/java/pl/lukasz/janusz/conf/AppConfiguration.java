@@ -72,7 +72,8 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Override
 	   public void addFormatters(FormatterRegistry registry) {
-	       registry.addConverter(new LocalDateConverter("yyyy-MM-dd")); //-HH.mm.ss.SSSSSS
-	       registry.addConverter(new LocalDateTimeConverter("yyyy-MM-dd'T'HH:mm:ss.SSSSSS"));
+	       registry.addConverter(new LocalDateConverter("yyyy-MM-dd'T'HH:mm")); //-HH.mm.ss.SSSSSS 2017-06-01T08:30
+//	       registry.addConverter(new LocalDateConverter("yyyy-MM-dd HH:mm")); //-HH.mm.ss.SSSSSS
+//	       registry.addConverter(new LocalDateTimeConverter("yyyy-MM-dd HH:mm:ss"));
 	   }
 }

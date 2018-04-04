@@ -35,7 +35,8 @@ public class Meal {
 	private int kcal;
 	
 //	@NotNull
-//	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP)
+//	private java.util.Date date;
 	private Date date;
 	
 //	@ManyToOne(cascade = CascadeType.ALL)

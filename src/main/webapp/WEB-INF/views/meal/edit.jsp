@@ -23,7 +23,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-4 col-md-3">
-        <a href="http://localhost:8080/dziennik_zywieniowy/meal/list">
+        <a href="/meal/list">
 	     <button type="button" class="btn btn-default navbar-btn pull-right">
 	        <span class="glyphicon glyphicon-chevron-left"></span>
      	 </button>

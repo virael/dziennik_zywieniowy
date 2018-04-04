@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-offset-0 col-l-5">
         <p>
-		   <a href="http://localhost:8080/dziennik_zywieniowy/user/logout">
+		   <a href="/user/logout">
 	        <button type="button" class=" btn pull-right btn btn-default btn-sm">
 	         <span class="glyphicon glyphicon-log-out"></span> Wyloguj
 	        </button>
@@ -38,7 +38,7 @@
 		        <th>Białko</th>
 		        <th>Tłuszcz</th>
 		        <th>Kalorie</th>
-		        <th>Data</th>
+		        <th>Data i godzina</th>
 		        <th>Edytuj</th>
 		        <th>Usuń</th>
 		    </tr>
@@ -50,7 +50,7 @@
 		            <td>${meal.protein}</td>
 		            <td>${meal.fat}</td>
 		            <td>${meal.kcal}</td>
-		            <td><fmt:formatDate pattern="dd-MM-yyyy - hh:mm" value="${meal.date}" /></td>
+		            <td><fmt:formatDate pattern="dd/MM/yyyy, hh:mm" value="${meal.date}" /></td>
 		            <!--<td>${meal.date}</td>-->
 		            <td><a href="<c:url value='edit?id=${meal.id}'/>">Edytuj posiłek</a></td>
 		            <td><a href="<c:url value='remove?id=${meal.id}'/>">Usuń posiłek</a></td>
