@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Edytowanie posiłku</title>
+<title>Edit a meal</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <style>
 	body{
@@ -28,29 +28,29 @@
 	        <span class="glyphicon glyphicon-chevron-left"></span>
      	 </button>
      	 </a>
-        <h4>Edytuj posiłek:</h4>
+        <h4>Edit following meal:</h4>
             <div class="form-login">
 			  <f:form method="post" modelAttribute="meal">
 			    <div>
-			      Nazwa: <f:input path="name" class="form-control input-sm chat-input" required="true" />
+			      Name: <f:input path="name" class="form-control input-sm chat-input" required="true" />
 			    </div>
 			    <div>
-			      Węglowodany: <f:input path="carbs" class="form-control input-sm chat-input" />
+			      Carbohydrates: <f:input path="carbs" class="form-control input-sm chat-input" />
 			    </div>
 			    <div>
-			      Białko: <f:input path="protein" class="form-control input-sm chat-input" />
+			      Protein: <f:input path="protein" class="form-control input-sm chat-input" />
 			    </div>
 			    <div>
-			      Tłuszcze: <f:input path="fat" class="form-control input-sm chat-input" />
+			      Fat: <f:input path="fat" class="form-control input-sm chat-input" />
 			    </div>
 			    <div>
-			      Kalorie: <f:input path="kcal" class="form-control input-sm chat-input" />
+			      Calories: <f:input path="kcal" class="form-control input-sm chat-input" />
 			    </div>
 			    <div>
-			      Data: <f:input type="datetime-local" path="date" class="form-control input-sm chat-input" />
+			      Date and time: <f:input type="datetime-local" path="date" class="form-control input-sm chat-input" />
 			    </div>
 			    <div class="wrapper">
-						<input type="submit" class="btn btn-primary btn-md" value="Zmień posiłek"/>
+						<input type="submit" class="btn btn-primary btn-md" value="Change"/>
 					</div>
 			  </f:form>
   			</div>

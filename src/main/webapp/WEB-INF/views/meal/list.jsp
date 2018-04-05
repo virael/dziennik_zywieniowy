@@ -8,7 +8,7 @@
 <html>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Dziennik żywieniowy - lista wszytskich posiłków</title>
+<title>Food diary - meal list</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <style>
 	body{
@@ -24,27 +24,27 @@
         <p>
 		   <a href="/user/logout">
 	        <button type="button" class=" btn pull-right btn btn-default btn-sm">
-	         <span class="glyphicon glyphicon-log-out"></span> Wyloguj
+	         <span class="glyphicon glyphicon-log-out"></span> Logout
 	        </button>
 	        </a>
 	      </p>
-		  <h2>Witaj ${user.firstName }, oto Twoja lista posiłków</h2>
+		  <h2>Welcome ${user.firstName }, here's your meal list</h2>
 		  
 		  <table class="table table-striped">
 		    <tr>
-		        <th>Id</th>
-		        <th>Nazwa</th>
-		        <th>Węglowodany</th>
-		        <th>Białko</th>
-		        <th>Tłuszcz</th>
-		        <th>Kalorie</th>
-		        <th>Data i godzina</th>
-		        <th>Edytuj</th>
-		        <th>Usuń</th>
+		        <!--<th>Id</th>-->
+		        <th>Name</th>
+		        <th>Carbohydrates</th>
+		        <th>Protein</th>
+		        <th>Fat</th>
+		        <th>Calories</th>
+		        <th>Date and time</th>
+		        <th>Edit</th>
+		        <th>Delete</th>
 		    </tr>
 		    <c:forEach items="${meals}" var="meal">
 		        <tr>
-		            <td>${meal.id}</td>
+		           <!-- <td>${meal.id}</td>-->
 		            <td>${meal.name}</td>
 		            <td>${meal.carbs}</td>
 		            <td>${meal.protein}</td>
@@ -52,13 +52,13 @@
 		            <td>${meal.kcal}</td>
 		            <td><fmt:formatDate pattern="dd/MM/yyyy, hh:mm" value="${meal.date}" /></td>
 		            <!--<td>${meal.date}</td>-->
-		            <td><a href="<c:url value='edit?id=${meal.id}'/>">Edytuj posiłek</a></td>
-		            <td><a href="<c:url value='remove?id=${meal.id}'/>">Usuń posiłek</a></td>
+		            <td><a href="<c:url value='edit?id=${meal.id}'/>">Edit meal</a></td>
+		            <td><a href="<c:url value='remove?id=${meal.id}'/>">Remove meal</a></td>
 		            
 		        </tr>
 		    </c:forEach>
 		  </table>
-		  <a href="<c:url value='add?id=${user.id}'/>">Dodaj nowy posiłek</a>
+		  <a href="<c:url value='add?id=${user.id}'/>">Add new meal</a>
      </div>
     </div>
 </div>

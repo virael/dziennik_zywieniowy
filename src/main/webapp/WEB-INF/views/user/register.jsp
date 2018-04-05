@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Rejestracja nowego użytkownika</title>
+<title>Register</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <style>
 	body{
@@ -26,16 +26,16 @@
 	        <span class="glyphicon glyphicon-chevron-left"></span>
      	 </button>
      	 </a>
-        <h4>Podaj swoje dane:</h4>
+        <h4>Please fill all fields:</h4>
             <div class="form-login">
 			    <f:form method="post" modelAttribute="user">
-					<p><f:input path="firstName" class="form-control input-sm chat-input" placeholder="Imię" required="true" /> </p>
-					<p><f:input path="lastName" class="form-control input-sm chat-input" placeholder="Nazwisko" required="true" /> </p>
+					<p><f:input path="firstName" class="form-control input-sm chat-input" placeholder="Name" required="true" /> </p>
+					<p><f:input path="lastName" class="form-control input-sm chat-input" placeholder="Surname" required="true" /> </p>
 					<p><f:input type="email" path="email" class="form-control input-sm chat-input" placeholder="Email" required="true" /> </p>
-					<p><f:input type="password" path="password" class="form-control input-sm chat-input" placeholder="Hasło" required="true" /> </p>
+					<p><f:input type="password" path="password" class="form-control input-sm chat-input" placeholder="Password" required="true" /> </p>
 				   
 				   <div class="wrapper">
-						<p><input type="submit" class="btn btn-primary btn-md" value="Dodaj użytkownika"/></p>
+						<p><input type="submit" class="btn btn-primary btn-md" value="Add new user"/></p>
 					</div>
 				</f:form>
 			</div>

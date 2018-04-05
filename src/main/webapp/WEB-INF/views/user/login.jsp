@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Logowanie</title>
+<title>Login</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <style>
 	body{
@@ -22,17 +22,17 @@
 
     <div class="row">
         <div class="col-md-offset-4 col-md-3">
-        <h4>Witaj</h4>
+        <h4>Welcome</h4>
             <div class="form-login">
             
 			<f:form method="post" modelAttribute="loginData">
-				<p><f:input path="email" class="form-control input-sm chat-input" placeholder="Email" required="true" /></p>
-				<p><f:password path="password" class="form-control input-sm chat-input" placeholder="Hasło" required="true" /></p>
+				<p><f:input path="email" class="form-control input-sm chat-input" placeholder="Email" value="test.account@hire.me" required="true" /></p>
+				<p><f:password path="password" class="form-control input-sm chat-input" placeholder="Hasło" value="1234" required="true" /></p>
 				<div class="wrapper">
-				<p><input type="submit" class="btn btn-primary btn-md" value="Zaloguj"/></p>
+				<p><input type="submit" class="btn btn-primary btn-md" value="Login"/></p>
 				</div>
 			</f:form>
-			<P>Nie masz konta? <a href="/user/register">Rejestracja</a></P>
+			<P>Don't have an account? <a href="/user/register">Register</a></P>
 			</div>
 	      </div>
     </div>
